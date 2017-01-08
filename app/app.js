@@ -6,8 +6,8 @@ var movieapp = angular.module("movieapp", [
 movieapp.config(function($routeProvider) {
     $routeProvider
         .when("/", {
-            templateUrl: "templates/home.html",
-            controller: "scripts/controllers/homeController.js",
+            templateUrl: "app/templates/home.html",
+            controller: "homeController",
             controllerAs: "home"
         })
         .otherwise({

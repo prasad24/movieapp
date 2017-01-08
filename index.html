@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="movieapp">
+
+<head>
+    <title>Movie Information</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.css">
+    <link href="app/styles/css/style.css" rel="stylesheet">
+</head>
+
+<body>
+    <div class="container">
+        <ng-view></ng-view>
+    </div>
+
+    <!-- vendor script files -->
+    <script src="node_modules/angular/angular.js"></script>
+    <script src="node_modules/angular-route/angular-route.js"></script>
+    <script src="node_modules/angular-cookies/angular-cookies.js"></script>
+
+    <!-- app files -->
+    <script src="app/app.js"></script>
+
+    <!-- Controllers -->
+    <script src="/app/scripts/controllers/homeController.js"></script>
+</body>
+
+</html>

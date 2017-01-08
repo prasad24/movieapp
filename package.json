@@ -17,9 +17,9 @@
   },
   "homepage": "https://github.com/prasad24/movieapp#readme",
   "dependencies": {
-    "angular": "^1.6.1",
-    "angular-cookies": "^1.6.1",
-    "angular-route": "^1.6.1",
+    "angular": "^1.5.10",
+    "angular-cookies": "^1.5.10",
+    "angular-route": "^1.5.10",
     "bootstrap": "^3.3.7"
   },
   "devDependencies": {
