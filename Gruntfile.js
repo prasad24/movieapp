@@ -1,3 +1,4 @@
+/* jshint esversion: 6 */
 module.exports = function(grunt) {
 
     require("load-grunt-tasks")(grunt);
@@ -14,9 +15,16 @@ module.exports = function(grunt) {
             },
             css: {
                 files: ['app/styles/less/*.less'],
-                tasks: ['less'],
+                tasks: ['less', 'cssmin:dev'],
                 options: {
                     spawn: false
+                }
+            },
+            js: {
+                files: ['app/scripts/**/*.js', 'app/app.js'],
+                tasks: ['ngAnnotate', 'uglify:dev'],
+                options: {
+                    spwan: false
                 }
             }
         },
@@ -44,7 +52,7 @@ module.exports = function(grunt) {
                     optimization: 2
                 },
                 files: {
-                    'app/styles/css/style.css': 'app/styles/less/*.less'
+                    'temp/styles/css/style.css': 'app/styles/less/*.less'
                 }
             }
         },
@@ -55,11 +63,64 @@ module.exports = function(grunt) {
                 shorthandCompacting: false,
                 roundingPrecision: -1
             },
-            target: {
+            dev: {
                 files: {
-                    'dist/styles/css/style.min.css': 'app/styles/css/style.css'
+                    'app/css/style.min.css': 'temp/styles/css/style.css'
+                }
+            },
+            prod: {
+                options: {
+                    sourceMap: false
+                },
+                files: {
+                    'dist/css/style.min.css': 'temp/styles/css/style.css'
+                }
+            }
+        },
+
+        ngAnnotate: {
+            vendor: {
+                files: {
+                    'temp/js/vendor.js': [
+                        'node_modules/angular/angular.js',
+                        'node_modules/angular-route/angular-route.js',
+                        'node_modules/angular-cookies/angular-cookies.js'
+                    ]
+                }
+            },
+            app: {
+                files: {
+                    'temp/js/app.js': [
+                        'app/app.js',
+                        'app/scripts/**/*.js',
+                        'tests/scripts/**/*.js'
+                    ]
+                }
+            }
+        },
+
+        uglify: {
+            dev: {
+                options: {
+                    sourceMap: true,
+                },
+                files: {
+                    ['app/js/vendor.min.js']: ['temp/js/vendor.js'],
+                    ['app/js/app.min.js']: ['temp/js/app.js']
+                }
+            },
+            prod: {
+                options: {
+                    sourceMap: false,
+                },
+                files: {
+                    ['dist/js/vendor.min.js']: ['temp/js/vendor.js'],
+                    ['dist/js/app.min.js']: ['temp/js/app.js']
                 }
             }
         }
     });
+
+    grunt.registerTask('dev', ['jshint', 'less', 'cssmin:dev', 'ngAnnotate', 'uglify:dev']);
+    grunt.registerTask('prod', ['jshint', 'less', 'cssmin:prod', 'ngAnnotate', 'uglify:prod']);
 };
