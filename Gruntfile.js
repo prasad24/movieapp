@@ -7,21 +7,21 @@ module.exports = function(grunt) {
 
         watch: {
             scripts: {
-                files: ['Gruntfile.js', 'app/scripts/**/*.js'],
+                files: ['Gruntfile.js', 'scripts/**/*.js'],
                 tasks: ['jshint'],
                 options: {
                     spawn: false
                 }
             },
             css: {
-                files: ['app/styles/less/*.less'],
+                files: ['styles/less/*.less'],
                 tasks: ['less', 'cssmin:dev'],
                 options: {
                     spawn: false
                 }
             },
             js: {
-                files: ['app/scripts/**/*.js', 'app/app.js'],
+                files: ['scripts/**/*.js', 'app.js'],
                 tasks: ['ngAnnotate', 'uglify:dev'],
                 options: {
                     spwan: false
@@ -37,7 +37,7 @@ module.exports = function(grunt) {
                 files: {
                     src: [
                         'Gruntfile.js',
-                        'app/scripts/**/*.js',
+                        'scripts/**/*.js',
                         'tests/scripts/**/*.js'
                     ]
                 }
@@ -52,7 +52,7 @@ module.exports = function(grunt) {
                     optimization: 2
                 },
                 files: {
-                    'temp/styles/css/style.css': 'app/styles/less/*.less'
+                    'temp/styles/css/style.css': 'styles/less/*.less'
                 }
             }
         },
@@ -65,7 +65,7 @@ module.exports = function(grunt) {
             },
             dev: {
                 files: {
-                    'app/css/style.min.css': 'temp/styles/css/style.css'
+                    'css/style.min.css': 'temp/styles/css/style.css'
                 }
             },
             prod: {
@@ -91,8 +91,8 @@ module.exports = function(grunt) {
             app: {
                 files: {
                     'temp/js/app.js': [
-                        'app/app.js',
-                        'app/scripts/**/*.js',
+                        'app.js',
+                        'scripts/**/*.js',
                         'tests/scripts/**/*.js'
                     ]
                 }
@@ -105,8 +105,8 @@ module.exports = function(grunt) {
                     sourceMap: true,
                 },
                 files: {
-                    ['app/js/vendor.min.js']: ['temp/js/vendor.js'],
-                    ['app/js/app.min.js']: ['temp/js/app.js']
+                    ['js/vendor.min.js']: ['temp/js/vendor.js'],
+                    ['js/app.min.js']: ['temp/js/app.js']
                 }
             },
             prod: {
