@@ -47,6 +47,19 @@ module.exports = function(grunt) {
                     'app/styles/css/style.css': 'app/styles/less/*.less'
                 }
             }
+        },
+
+        cssmin: {
+            options: {
+                sourceMap: true,
+                shorthandCompacting: false,
+                roundingPrecision: -1
+            },
+            target: {
+                files: {
+                    'dist/styles/css/style.min.css': 'app/styles/css/style.css'
+                }
+            }
         }
     });
 };
