@@ -10,15 +10,31 @@
 </head>
 
 <body>
-    <div class="container">
+    <header class="container-fluid">
+        <nav>
+            <ul>
+                <a href=" #/ ">
+                    <li>Home</li>
+                </a>
+                <a href="#movies/ ">
+                    <li>Movies</li>
+                </a>
+                <a href="#/login " class="pull-right ">
+                    <li class="active ">Login</li>
+                </a>
+            </ul>
+        </nav>
+
+    </header>
+    <div class="container ">
         <ng-view></ng-view>
     </div>
 
     <!-- vendor script files -->
-    <script src="js/vendor.min.js"></script>
+    <script src="js/vendor.min.js "></script>
 
     <!-- app files -->
-    <script src="js/app.min.js"></script>
+    <script src="js/app.min.js "></script>
 </body>
 
 </html>

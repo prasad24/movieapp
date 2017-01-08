@@ -1,5 +1,29 @@
 @bodyColor: lightblue;
+@linkSize: 1.4em;
 
 body {
     background-color: @bodyColor; 
+}
+
+nav {
+        background-color: black;
+    li {
+        display:inline-flex;
+        list-style-type: none;
+        font-size: @linkSize;
+        font-weight: bold;
+        padding:10px;
+        color: lightblue;
+
+        .active {
+            color: white;
+        }
+    }
+}
+
+header {
+    padding:0px;
+    .container-fluid {
+        padding:0px;
+    }
 }
