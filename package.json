@@ -1,0 +1,19 @@
+{
+  "name": "movieapp",
+  "version": "1.0.0",
+  "description": "Provides ability to search for movies and get movie information",
+  "main": "app/app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/prasad24/movieapp.git"
+  },
+  "author": "Prasad Subramanian",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/prasad24/movieapp/issues"
+  },
+  "homepage": "https://github.com/prasad24/movieapp#readme"
+}
