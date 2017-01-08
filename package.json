@@ -15,5 +15,20 @@
   "bugs": {
     "url": "https://github.com/prasad24/movieapp/issues"
   },
-  "homepage": "https://github.com/prasad24/movieapp#readme"
+  "homepage": "https://github.com/prasad24/movieapp#readme",
+  "dependencies": {
+    "angular": "^1.6.1",
+    "angular-cookies": "^1.6.1",
+    "angular-route": "^1.6.1",
+    "bootstrap": "^3.3.7"
+  },
+  "devDependencies": {
+    "grunt-cli": "^1.2.0",
+    "grunt-contrib-cssmin": "^1.0.2",
+    "grunt-contrib-jshint": "^1.1.0",
+    "grunt-contrib-less": "^1.4.0",
+    "grunt-contrib-watch": "^1.0.0",
+    "jshint-stylish": "^2.2.1",
+    "load-grunt-tasks": "^3.5.2"
+  }
 }
